@@ -3,28 +3,30 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
 
 function App() {
-  return (
-    <>
-      <UserInfo />
-    </>
-  );
-}
-
-function UserInfo() {
-  const user = {
+  const userMe = {
     name: "Roman Bilbas",
     email: "rebenak006",
     tweets: 1233,
     following: 455,
     followers: 531,
-    IsMale: true,
+    isMale: true,
   };
+
+  return (
+    <>
+      <UserInfo user={userMe} />
+    </>
+  );
+}
+
+function UserInfo(props) {
+  const { user } = props;
   const userNameStyle = {
     color: user.IsMale ? "blue" : "red",
-    backgroundImage: user.IsMale
-      ? `url("https://c0.klipartz.com/pngpicture/85/114/gratis-png-avatar-usuario-perfil-masculino-logo-icono-de-perfil.png" )`
+    backgroundImage: user.isMale
+      ? `url("https://w7.pngwing.com/pngs/1012/700/png-transparent-user-male-icon-business-user-s-face-head-gender-symbol.png" )`
       : `url(
-          "https://w7.pngwing.com/pngs/924/414/png-transparent-woman-illustration-user-profile-avatar-woman-icon-girl-avatar-face-fashion-girl-heroes.png"
+          "https://cdn-icons-png.flaticon.com/512/4515/4515630.png"
         )`,
   };
 
